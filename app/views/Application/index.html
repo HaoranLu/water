@@ -1,0 +1,84 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+
+
+
+
+    <h1>滤芯更换提醒</h1>
+
+<ul>
+    #{ifnot staff}
+        <li>
+            <a href="@{controllers.Secure.login()}">请先登录</a>
+        </li>
+    #{/ifnot}
+    #{else}
+        <li>
+            <a>欢迎, ${staff.name}</a>
+            <a href="/logout">登出</a>
+            #{if staff.isAdmin}
+                <a href="@{Admin.index()}">系统管理</a>
+            #{/if}
+            #{else}
+                <a href="/admin/users">用户管理</a>
+            #{/else}
+
+        </li>
+    #{/else}
+</ul>
+
+
+#{ifnot changeUsers}
+    <p>
+        没有用户需要更换滤芯
+    </p>
+#{/ifnot}
+#{else}
+<div id="crudList">
+    <div id="crudListTable">
+    <table>
+        <thead>
+        <tr>
+            <th>联系电话</th>
+            <th>姓名</th>
+            <th>地址</th>
+            <th>安装日期</th>
+            <th>安装者</th>
+            <th>上次更换日期</th>
+            <th>更换者</th>
+            <th width="13%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+            #{list changeUsers, as:'cu'}
+            <tr>
+                <td>${cu.phone}</td>
+                <td>${cu.name}</td>
+                <td>${cu.address}</td>
+                <td>${cu.installDate}</td>
+                <td>${cu.installer}</td>
+                <td>${cu.lastChange}</td>
+                <td>${cu.lastChanger}</td>
+                <td>
+                    #{ifnot staff}
+                    <a href="/login">完成更换</a>
+                    #{/ifnot}
+                    #{else}
+                    <a href="@{Users.finishChange(cu.id, staff.id)}">
+                        完成更换
+                    </a>
+                    #{/else}
+                </td>
+            </tr>
+            #{/list}
+        </tbody>
+    </table>
+    </div>
+</div>
+#{/else}
+
+
+
+
+

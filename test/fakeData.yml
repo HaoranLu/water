@@ -1,0 +1,56 @@
+#Staffs
+model.Staff(sf1):
+    username:   demo
+    password:   demo
+    name:       Daniel Wu
+    isAdmin:    true
+
+model.Staff(sf2):
+    username:   staff2
+    password:   staff2
+    name:       Xinqian Huang
+
+model.Staff(sf3):
+    username:   staff3
+    password:   staff3
+    name:       Daniel Wu
+
+# Users
+
+models.User(ur1):
+    name:        user1
+    phone:       18811478027
+    address:     上汇泊林公馆5幢1803室
+    installDate: 2009-06-14
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf2
+    director:    sf1
+    installed:   false
+    note:        （2号回访4.17回访，电话关机）
+
+models.User(ur2):
+    name:        user2
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-06-15
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+models.User(ur3):
+    name:        user3
+    phone:       15811478027
+    address:     金乡镇绿岛小区4幢1单元301
+    installDate: 2009-06-13
+    reason:      管道不清洗，送滤芯2条（价格1580元）
+    appointment: 已结12
+    installer:   sf1
+    director:    sf2
+    installed:   false
+    note:        （让技术人员去看下，是否可以按装）同227#
+
+
+

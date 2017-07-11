@@ -1,0 +1,173 @@
+#Staffs
+Staff(sf1):
+    username:   demo
+    password:   demo
+    name:       Daniel Wu
+    isAdmin:    true
+
+Staff(sf2):
+    username:   staff2
+    password:   staff2
+    name:       Xinqian Huang
+
+Staff(sf3):
+    username:   staff3
+    password:   staff3
+    name:       Daniel Wu
+
+# Users
+
+User(ur1):
+    name:        user1
+    phone:       18811478027
+    address:     上汇泊林公馆5幢1803室
+    installDate: 2009-06-14
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf2
+    director:    sf1
+    installed:   true
+    note:        （2号回访4.17回访，电话关机）
+
+User(ur2):
+    name:        user2
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-02
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+User(ur3):
+    name:        user3
+    phone:       15811478027
+    address:     金乡镇绿岛小区4幢1单元301
+    installDate: 2009-06-13
+    reason:      管道不清洗，送滤芯2条（价格1580元）
+    appointment: 已结12
+    installer:   sf1
+    director:    sf2
+    installed:   true
+    note:        （让技术人员去看下，是否可以按装）同227#
+
+User(ur4):
+    name:        林先生
+    phone:       13587620708
+    address:     南亚花园B4幢102室
+    installDate: 2009-06-14
+    reason:      老人不同意安装
+    appointment:
+    installer:
+    director:
+    installed:   true
+    note:
+
+User(ur5):
+    name:        潘先生
+    phone:       13957782618
+    address:     上汇泊林公馆5幢1803室
+    installDate: 2016-11-17
+    reason:
+    appointment: 已结18
+    installer:   sf2
+    director:    sf1
+    installed:   true
+    note:
+
+User(ur6):
+    name:        涂先生
+    phone:       13506517232
+    address:     康城九顺公寓6幢401室
+    installDate: 2016-12-31
+    reason:      送到看货不接电话
+    appointment:
+    installer:   sf2
+    director:    sf1
+    installed:   true
+    note:        （2.25回访，说一半客户就挂断电话了）
+User(ur7):
+    name:        user7
+    phone:       13758756664
+    address:     塘下官渎村朝阳名阳2幢902
+    installDate: 2010-06-14
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf2
+    director:    sf1
+    installed:   true
+    note:        （2号回访4.17回访，电话关机）
+
+User(ur8):
+    name:        user8
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-08
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+User(ur9):
+    name:        user9
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-07
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+User(ur10):
+    name:        user10
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-06
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+User(ur11):
+    name:        user11
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-05
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+User(ur12):
+    name:        user12
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-04
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true
+
+User(ur13):
+    name:        user13
+    phone:       13811478027
+    address:     瑞安市塘下镇亿嘉广场D幢二楼 新爱婴早教中心
+    installDate: 2009-07-03
+    lastChange: 2009-07-02
+    reason:      没有水管
+    appointment: 已结12
+    installer:   sf3
+    director:    sf1
+    installed:   true

@@ -1,0 +1,37 @@
+#{extends 'admin.html' /}
+
+
+    <div id="crudIndex">
+        <h2>欢迎， ${staff} !</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>管理事项</th>
+                    <th width="20%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="/admin/users">用户管理</a>
+                    </td>
+                    <td class="crudNew">
+                        <a href="/admin/users/new">新建用户</a>
+                    </td>
+                </tr>
+                #{secure.check 'admin'}
+                <tr>
+                    <td>
+                        <a href="/admin/staffs">员工管理</a>
+                    </td>
+                    <td class="crudNew">
+                        <a href="/admin/staffs/new">新建员工</a>
+                    </td>
+                </tr>
+
+                #{/secure.check}
+            </tbody>
+        </table>
+    </div>
+
+

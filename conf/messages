@@ -1,0 +1,17 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+Users=所有用户
+User=用户
+name=姓名
+address=地址
+phone=联系电话
+installDate=安装日趋
+lastChange=上次更换日期
+lastChanger=更换人员
+reason=不安装的原因
+appointment=预约
+installer=安装者
+director=导播
+installed=已安装
+note=备注

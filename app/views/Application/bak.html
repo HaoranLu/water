@@ -1,0 +1,143 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+<body>
+
+<div class="wrapper">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="fresh-table full-color-azure">
+                    <div class="toolbar">
+                        <button id="alertBtn" class="btn btn-default">Alert</button>
+                    </div>
+
+                    <table id="fresh-table" class="table">
+                    #{if changeUsers}
+                        <thead>
+                        <th data-field="phone" data-sortable="true">Phone</th>
+                        <th data-field="name" data-sortable="true">Name</th>
+                        <th data-field="address" data-sortable="true">Address</th>
+                        <th data-field="installDate" data-sortable="true">Install Date</th>
+                        <th data-field="lastChange" data-sortable="true">上次更换日期</th>
+                        <th data-field="installer" data-sortable="true">installer</th>
+                        <th data-field="actions">Action</th>
+                        </thead>
+
+                        <tbody>
+                            #{list changeUsers, as:'cu'}
+                            <tr>
+                                <td>${cu.phone}</td>
+                                <td>${cu.name}</td>
+                                <td>${cu.address}</td>
+                                <td>${cu.installDate}</td>
+                                <td>${cu.lastChange}</td>
+                                <td>${cu.installer}</td>
+                                <td>
+                                    <a href="@{Application.finishChange(cu.id)}">
+                                        完成更换
+                                    </a>
+                                </td>
+                            </tr>
+                            #{/list}
+                        </tbody>
+                    #{/if}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<script type="text/javascript">
+    var $table = $('#fresh-table'),
+            $alertBtn = $('#alertBtn'),
+            full_screen = false,
+            window_height;
+
+    $().ready(function(){
+
+        window_height = $(window).height();
+        table_height = window_height - 20;
+
+
+        $table.bootstrapTable({
+            toolbar: ".toolbar",
+
+            showRefresh: true,
+            search: true,
+            showToggle: true,
+            showColumns: true,
+            pagination: true,
+            striped: true,
+            sortable: true,
+            height: table_height,
+            pageSize: 8,
+            pageList: [8,10,25,50],
+
+            formatShowingRows: function(pageFrom, pageTo, totalRows){
+                //do nothing here, we don't want to show the text "showing x of y from..."
+            },
+            formatRecordsPerPage: function(pageNumber){
+                return pageNumber + " rows visible";
+            },
+            icons: {
+                refresh: 'fa fa-refresh',
+                toggle: 'fa fa-th-list',
+                columns: 'fa fa-columns',
+                detailOpen: 'fa fa-plus-circle',
+                detailClose: 'fa fa-minus-circle'
+            }
+        });
+
+        window.operateEvents = {
+            'click .like': function (e, value, row, index) {
+                alert('You click like icon, row: ' + JSON.stringify(row));
+                console.log(value, row, index);
+            },
+            'click .edit': function (e, value, row, index) {
+                alert('You click edit icon, row: ' + JSON.stringify(row));
+                console.log(value, row, index);
+            },
+            'click .remove': function (e, value, row, index) {
+                $table.bootstrapTable('remove', {
+                    field: 'id',
+                    values: [row.id]
+                });
+
+            }
+        };
+
+
+        $alertBtn.click(function () {
+            alert("You pressed on Alert");
+        });
+
+
+        $(window).resize(function () {
+            $table.bootstrapTable('resetView');
+        });
+    });
+
+
+    function operateFormatter(value, row, index) {
+        return [
+            '<a rel="tooltip" title="Like" class="table-action like" href="javascript:void(0)" title="Like">',
+            '<i class="fa fa-heart"></i>',
+            '</a>',
+            '<a rel="tooltip" title="Edit" class="table-action edit" href="javascript:void(0)" title="Edit">',
+            '<i class="fa fa-edit"></i>',
+            '</a>',
+            '<a rel="tooltip" title="Remove" class="table-action remove" href="javascript:void(0)" title="Remove">',
+            '<i class="fa fa-remove"></i>',
+            '</a>'
+        ].join('');
+    }
+
+</script>
+

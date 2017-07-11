@@ -1,0 +1,46 @@
+#{if users}
+<table>
+    <thead>
+    <tr>
+        <th>Phone</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Install Date</th>
+        <th width="3%">Installed</th>
+        <th>reason</th>
+        <th>installer</th>
+        <th width="13%">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        #{list users, as:'user'}
+        <tr>
+            <td>${user.phone}</td>
+            <td>${user.name}</td>
+            <td>${user.address}</td>
+            <td>${user.installDate}</td>
+            <td>${user.installed}</td>
+            <td>${user.reason}</td>
+            <td>${user.installer}</td>
+            <td>
+                <a href="＃">编辑订单</a>
+            </td>
+        </tr>
+        #{/list}
+    </tbody>
+</table>
+#{if page > 1}
+    <p>
+        <a id="previousPage" href="${page-1}">Previour results</a>
+    </p>
+#{/if}
+<p>
+    <a id="nextPage" href="${page+1}">More results</a>
+</p>
+#{/if}
+
+#{else}
+<p>
+    No more results
+</p>
+#{/else}

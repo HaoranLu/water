@@ -1,0 +1,39 @@
+<h1>滤芯更换提醒</h1>
+
+#{ifnot changeUsers}
+<p>
+    没有用户需要更换滤芯
+</p>
+#{/ifnot}
+#{else}
+<table>
+    <thead>
+    <tr>
+        <th>Phone</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Install Date</th>
+        <th width="3%">Installed</th>
+        <th>reason</th>
+        <th>installer</th>
+        <th width="13%">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        #{list changeUsers, as:'cu'}
+        <tr>
+            <td>${cu.phone}</td>
+            <td>${cu.name}</td>
+            <td>${cu.address}</td>
+            <td>${cu.installDate}</td>
+            <td>${cu.installed}</td>
+            <td>${cu.reason}</td>
+            <td>${cu.installer}</td>
+            <td>
+                OK
+            </td>
+        </tr>
+        #{/list}
+    </tbody>
+</table>
+#{/else}

@@ -1,0 +1,6 @@
+05 Jul 2017 15:32:49,685 INFO  ~ Starting /Users/luhaoran/Desktop/play-1.4.4/water
+05 Jul 2017 15:32:51,511 WARN  ~ You're running Play! in DEV mode
+05 Jul 2017 15:32:51,699 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+05 Jul 2017 15:33:17,110 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0 for default
+05 Jul 2017 15:33:21,296 INFO  ~ Application 'water' is now started !
+05 Jul 2017 17:09:59,085 INFO  ~ Restart: 2 classes changed, caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
